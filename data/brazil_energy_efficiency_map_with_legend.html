@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5248f4effeba76088e35be17d7e5e99e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 50px; left: 50px; width: 180px; height: 160px; 
+background-color: white; border:2px solid grey; z-index:9999; font-size:14px; padding: 5px;">
+&emsp;<b>Score Legend</b><br>
+&emsp;<i class="fa fa-circle" style="color:darkred;"></i>&nbsp;> 0.2<br>
+&emsp;<i class="fa fa-circle" style="color:red;"></i>&nbsp;> 0.1<br>
+&emsp;<i class="fa fa-circle" style="color:orange;"></i>&nbsp;> 0.05<br>
+&emsp;<i class="fa fa-circle" style="color:lightred;"></i>&nbsp;> 0.01<br>
+&emsp;<i class="fa fa-circle" style="color:lightblue;"></i>&nbsp;> 0.005<br>
+&emsp;<i class="fa fa-circle" style="color:blue;"></i>&nbsp;&le; 0.005
+</div>
+    
+            <div class="folium-map" id="map_5248f4effeba76088e35be17d7e5e99e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5248f4effeba76088e35be17d7e5e99e = L.map(
+                "map_5248f4effeba76088e35be17d7e5e99e",
+                {
+                    center: [-10.3333333, -53.2],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5f853b4d1d1749e400679fcc88459a98 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5f853b4d1d1749e400679fcc88459a98.addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var marker_45f2b462ee855b508ca31c6723ce7d04 = L.marker(
+                [58.9954679, 24.7877035],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_e794089a8886ff37e3ee2c79ad96a466 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_45f2b462ee855b508ca31c6723ce7d04.setIcon(icon_e794089a8886ff37e3ee2c79ad96a466);
+        
+    
+        var popup_d8d39eee3a7489fd9015890c3d5122a7 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_d1ddbaaed3d27dd78c999d4281d81930 = $(`<div id="html_d1ddbaaed3d27dd78c999d4281d81930" style="width: 100.0%; height: 100.0%;">Agente: 28.152.650/0001-71<br>Score Médio: 0.0000<br>Custo Total: 2600000.00<br>Energia Economizada: 0.00<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_d8d39eee3a7489fd9015890c3d5122a7.setContent(html_d1ddbaaed3d27dd78c999d4281d81930);
+            
+        
+
+        marker_45f2b462ee855b508ca31c6723ce7d04.bindPopup(popup_d8d39eee3a7489fd9015890c3d5122a7)
+        ;
+
+        
+    
+    
+            var marker_9ace0267c4d7214d26b64243df8f4562 = L.marker(
+                [-18.0946619, -40.5178891],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_46e8000a3e4d2737543593b3cf3cbaac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9ace0267c4d7214d26b64243df8f4562.setIcon(icon_46e8000a3e4d2737543593b3cf3cbaac);
+        
+    
+        var popup_0b60f780328b0b53424cfd2045b83b28 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_c2e15f13c4b9aba75f200c3b86dc2b6d = $(`<div id="html_c2e15f13c4b9aba75f200c3b86dc2b6d" style="width: 100.0%; height: 100.0%;">Agente: BOA VISTA ENERGIA S/A<br>Score Médio: 0.0000<br>Custo Total: 2145354.30<br>Energia Economizada: 5995.88<br>Redução Demanda Ponta: 2856.25</div>`)[0];
+                popup_0b60f780328b0b53424cfd2045b83b28.setContent(html_c2e15f13c4b9aba75f200c3b86dc2b6d);
+            
+        
+
+        marker_9ace0267c4d7214d26b64243df8f4562.bindPopup(popup_0b60f780328b0b53424cfd2045b83b28)
+        ;
+
+        
+    
+    
+            var marker_ec2349d1df1cdb50de198278c4c33fb7 = L.marker(
+                [-27.09851365, -52.64486742525156],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_0590d4fddfdf746f70e2ad803c61453d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ec2349d1df1cdb50de198278c4c33fb7.setIcon(icon_0590d4fddfdf746f70e2ad803c61453d);
+        
+    
+        var popup_0b3cdfbb6d440fe8e61d2b4509d8bdf6 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_00a482ee0fe36c7e14743caddac0e07c = $(`<div id="html_00a482ee0fe36c7e14743caddac0e07c" style="width: 100.0%; height: 100.0%;">Agente: CELESC Distribuição S.A<br>Score Médio: 0.0000<br>Custo Total: 19157741.31<br>Energia Economizada: 9923.14<br>Redução Demanda Ponta: 1377.47</div>`)[0];
+                popup_0b3cdfbb6d440fe8e61d2b4509d8bdf6.setContent(html_00a482ee0fe36c7e14743caddac0e07c);
+            
+        
+
+        marker_ec2349d1df1cdb50de198278c4c33fb7.bindPopup(popup_0b3cdfbb6d440fe8e61d2b4509d8bdf6)
+        ;
+
+        
+    
+    
+            var marker_e9f60a130d0ab4badc67219bf97fe5ef = L.marker(
+                [-1.3363303, -48.44656919031406],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_620e0907780fb42ab41d4ba40ff721d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_e9f60a130d0ab4badc67219bf97fe5ef.setIcon(icon_620e0907780fb42ab41d4ba40ff721d4);
+        
+    
+        var popup_1d0a02a5af42f7aaaa40a823ebe25740 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_3bfb0203d67b07de24f54079510c3cc2 = $(`<div id="html_3bfb0203d67b07de24f54079510c3cc2" style="width: 100.0%; height: 100.0%;">Agente: CENTRAIS ELETRICAS DO PARA<br>Score Médio: 0.0079<br>Custo Total: 3274361.91<br>Energia Economizada: 6124.91<br>Redução Demanda Ponta: 1268.06</div>`)[0];
+                popup_1d0a02a5af42f7aaaa40a823ebe25740.setContent(html_3bfb0203d67b07de24f54079510c3cc2);
+            
+        
+
+        marker_e9f60a130d0ab4badc67219bf97fe5ef.bindPopup(popup_1d0a02a5af42f7aaaa40a823ebe25740)
+        ;
+
+        
+    
+    
+            var marker_1ea3ec8ae60bad25ef92acafa511b115 = L.marker(
+                [-5.63498165, -35.4179213689158],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_150fae3ab80137249fe15d4a0a90f465 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1ea3ec8ae60bad25ef92acafa511b115.setIcon(icon_150fae3ab80137249fe15d4a0a90f465);
+        
+    
+        var popup_5f9166be2f4ecbb17f6f7720180d6094 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_48a32ce51909624580809e6acf79ed04 = $(`<div id="html_48a32ce51909624580809e6acf79ed04" style="width: 100.0%; height: 100.0%;">Agente: COMPANHIA ENERGETICA DO CEARA<br>Score Médio: 0.0000<br>Custo Total: 72375610.63<br>Energia Economizada: 146956.79<br>Redução Demanda Ponta: 54871.05</div>`)[0];
+                popup_5f9166be2f4ecbb17f6f7720180d6094.setContent(html_48a32ce51909624580809e6acf79ed04);
+            
+        
+
+        marker_1ea3ec8ae60bad25ef92acafa511b115.bindPopup(popup_5f9166be2f4ecbb17f6f7720180d6094)
+        ;
+
+        
+    
+    
+            var marker_02a8dba6f88c4395d9fec9b3d6726b3e = L.marker(
+                [-5.63498165, -35.4179213689158],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_35952709e812e9de88c101c4983d61b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_02a8dba6f88c4395d9fec9b3d6726b3e.setIcon(icon_35952709e812e9de88c101c4983d61b4);
+        
+    
+        var popup_ed5999077b762a22b19815dda066e79c = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_61cb6629974458d1670ca82a263694e3 = $(`<div id="html_61cb6629974458d1670ca82a263694e3" style="width: 100.0%; height: 100.0%;">Agente: COMPANHIA ENERGETICA DO RIO GRANDE DO NORTE<br>Score Médio: 0.0000<br>Custo Total: 6684372.17<br>Energia Economizada: 3486.59<br>Redução Demanda Ponta: 492.83</div>`)[0];
+                popup_ed5999077b762a22b19815dda066e79c.setContent(html_61cb6629974458d1670ca82a263694e3);
+            
+        
+
+        marker_02a8dba6f88c4395d9fec9b3d6726b3e.bindPopup(popup_ed5999077b762a22b19815dda066e79c)
+        ;
+
+        
+    
+    
+            var marker_cf970148986bc450071fb2781c58cc26 = L.marker(
+                [-20.5356207, -49.3242102],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_b0339ea389539db66c91f54c82b0352d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cf970148986bc450071fb2781c58cc26.setIcon(icon_b0339ea389539db66c91f54c82b0352d);
+        
+    
+        var popup_67f2e82bcaf0b2e5e2fe3344cbbbcd42 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_424d5fe524a9c5a04121d9e8aff231d6 = $(`<div id="html_424d5fe524a9c5a04121d9e8aff231d6" style="width: 100.0%; height: 100.0%;">Agente: COMPANHIA PAULISTA DE FORÇA E LUZ<br>Score Médio: 0.0000<br>Custo Total: 292917838.18<br>Energia Economizada: 571271.65<br>Redução Demanda Ponta: 189534.22</div>`)[0];
+                popup_67f2e82bcaf0b2e5e2fe3344cbbbcd42.setContent(html_424d5fe524a9c5a04121d9e8aff231d6);
+            
+        
+
+        marker_cf970148986bc450071fb2781c58cc26.bindPopup(popup_67f2e82bcaf0b2e5e2fe3344cbbbcd42)
+        ;
+
+        
+    
+    
+            var marker_4ceab15f0c8d66fd0d12da4a492e59a8 = L.marker(
+                [38.5347929, -8.9906223],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_6cba26f6b4f63968dcd0717322659fe5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4ceab15f0c8d66fd0d12da4a492e59a8.setIcon(icon_6cba26f6b4f63968dcd0717322659fe5);
+        
+    
+        var popup_a1b55f10324f88a21e5950d4855b890d = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_d9343854271b8c16e14c03176902a3fb = $(`<div id="html_d9343854271b8c16e14c03176902a3fb" style="width: 100.0%; height: 100.0%;">Agente: COOPERATIVA ALIANÇA<br>Score Médio: 0.0000<br>Custo Total: 1287342.77<br>Energia Economizada: 2773.90<br>Redução Demanda Ponta: 811.41</div>`)[0];
+                popup_a1b55f10324f88a21e5950d4855b890d.setContent(html_d9343854271b8c16e14c03176902a3fb);
+            
+        
+
+        marker_4ceab15f0c8d66fd0d12da4a492e59a8.bindPopup(popup_a1b55f10324f88a21e5950d4855b890d)
+        ;
+
+        
+    
+    
+            var marker_a64d0963788e85b2f642bf8828630ba1 = L.marker(
+                [-25.38696195, -51.474271],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_579708dc59dd89433aea68e3c9a31c13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a64d0963788e85b2f642bf8828630ba1.setIcon(icon_579708dc59dd89433aea68e3c9a31c13);
+        
+    
+        var popup_27e3d311e6ed485523a9bd13a659ab37 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_057c87a11678d2429df54dd1f838419d = $(`<div id="html_057c87a11678d2429df54dd1f838419d" style="width: 100.0%; height: 100.0%;">Agente: COPEL DISTRIBUICAO S.A.<br>Score Médio: 0.0000<br>Custo Total: 94318719.60<br>Energia Economizada: 316487.16<br>Redução Demanda Ponta: 121329.39</div>`)[0];
+                popup_27e3d311e6ed485523a9bd13a659ab37.setContent(html_057c87a11678d2429df54dd1f838419d);
+            
+        
+
+        marker_a64d0963788e85b2f642bf8828630ba1.bindPopup(popup_27e3d311e6ed485523a9bd13a659ab37)
+        ;
+
+        
+    
+    
+            var marker_f7b4c7d6f2bf907067738bf897a594d6 = L.marker(
+                [-21.1613218, -47.78676987583984],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_2b91c74604877747dae62e8996718cd6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f7b4c7d6f2bf907067738bf897a594d6.setIcon(icon_2b91c74604877747dae62e8996718cd6);
+        
+    
+        var popup_231655d7e984a657bb6b884fac96db6e = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_d72b459d85630d4e9285688b551ffcac = $(`<div id="html_d72b459d85630d4e9285688b551ffcac" style="width: 100.0%; height: 100.0%;">Agente: CPFL Paulista<br>Score Médio: 0.0000<br>Custo Total: 2948985.82<br>Energia Economizada: 673.28<br>Redução Demanda Ponta: 102.07</div>`)[0];
+                popup_231655d7e984a657bb6b884fac96db6e.setContent(html_d72b459d85630d4e9285688b551ffcac);
+            
+        
+
+        marker_f7b4c7d6f2bf907067738bf897a594d6.bindPopup(popup_231655d7e984a657bb6b884fac96db6e)
+        ;
+
+        
+    
+    
+            var marker_589e8b65d5f8254f48007b69e4c16b30 = L.marker(
+                [-23.50748455, -47.60971348174161],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_53598a0d987a19314f359076b601670e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_589e8b65d5f8254f48007b69e4c16b30.setIcon(icon_53598a0d987a19314f359076b601670e);
+        
+    
+        var popup_6abb9427647e8c3ea9ee9bdbea49a3e8 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_25b02c72c357b3175fa257ed1bbbc271 = $(`<div id="html_25b02c72c357b3175fa257ed1bbbc271" style="width: 100.0%; height: 100.0%;">Agente: CPFL SANTA CRUZ<br>Score Médio: 0.0099<br>Custo Total: 0.00<br>Energia Economizada: 761.55<br>Redução Demanda Ponta: 163.58</div>`)[0];
+                popup_6abb9427647e8c3ea9ee9bdbea49a3e8.setContent(html_25b02c72c357b3175fa257ed1bbbc271);
+            
+        
+
+        marker_589e8b65d5f8254f48007b69e4c16b30.bindPopup(popup_6abb9427647e8c3ea9ee9bdbea49a3e8)
+        ;
+
+        
+    
+    
+            var marker_29af048506608ada40d1d149ab95907c = L.marker(
+                [-23.50748455, -47.60971348174161],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_26af61fff0120b7ebb71fdeedebb0e01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_29af048506608ada40d1d149ab95907c.setIcon(icon_26af61fff0120b7ebb71fdeedebb0e01);
+        
+    
+        var popup_ab2386c4081d24002ecf1a147b66e421 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_254f995eb64b04e3cd2923c6060a1bcd = $(`<div id="html_254f995eb64b04e3cd2923c6060a1bcd" style="width: 100.0%; height: 100.0%;">Agente: CPFL Santa Cruz<br>Score Médio: 0.0000<br>Custo Total: 499523.36<br>Energia Economizada: 410.90<br>Redução Demanda Ponta: 65.38</div>`)[0];
+                popup_ab2386c4081d24002ecf1a147b66e421.setContent(html_254f995eb64b04e3cd2923c6060a1bcd);
+            
+        
+
+        marker_29af048506608ada40d1d149ab95907c.bindPopup(popup_ab2386c4081d24002ecf1a147b66e421)
+        ;
+
+        
+    
+    
+            var marker_9208223073eeb42e9a86845bdfd41597 = L.marker(
+                [-27.09851365, -52.64486742525156],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_3f03042b17a6abf1514b0fe31b151a05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9208223073eeb42e9a86845bdfd41597.setIcon(icon_3f03042b17a6abf1514b0fe31b151a05);
+        
+    
+        var popup_d1c4687dee6ad04f61ebae6958358553 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_93f1962e3d08e73498e512bc3f51a733 = $(`<div id="html_93f1962e3d08e73498e512bc3f51a733" style="width: 100.0%; height: 100.0%;">Agente: Celesc Distribuição<br>Score Médio: 0.0000<br>Custo Total: 59767545.45<br>Energia Economizada: 12901.76<br>Redução Demanda Ponta: 3767.72</div>`)[0];
+                popup_d1c4687dee6ad04f61ebae6958358553.setContent(html_93f1962e3d08e73498e512bc3f51a733);
+            
+        
+
+        marker_9208223073eeb42e9a86845bdfd41597.bindPopup(popup_d1c4687dee6ad04f61ebae6958358553)
+        ;
+
+        
+    
+    
+            var marker_88f17c3ce5002ae8e8a529e5e7b2931b = L.marker(
+                [-27.09851365, -52.64486742525156],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_45ac66fe77671ab647a2a3f43b0db093 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_88f17c3ce5002ae8e8a529e5e7b2931b.setIcon(icon_45ac66fe77671ab647a2a3f43b0db093);
+        
+    
+        var popup_76eb4e592dee35fff6935732c78f52d4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_e27908b64c1728aaf10fad817a92bb65 = $(`<div id="html_e27908b64c1728aaf10fad817a92bb65" style="width: 100.0%; height: 100.0%;">Agente: Celesc Distribuição S.A<br>Score Médio: 0.0038<br>Custo Total: 15342457.33<br>Energia Economizada: 12071.22<br>Redução Demanda Ponta: 2947.97</div>`)[0];
+                popup_76eb4e592dee35fff6935732c78f52d4.setContent(html_e27908b64c1728aaf10fad817a92bb65);
+            
+        
+
+        marker_88f17c3ce5002ae8e8a529e5e7b2931b.bindPopup(popup_76eb4e592dee35fff6935732c78f52d4)
+        ;
+
+        
+    
+    
+            var marker_136c37315c7469c093b679c81b1615f3 = L.marker(
+                [-27.09851365, -52.64486742525156],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_f4467e804286abc3b5e190986a093ee7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_136c37315c7469c093b679c81b1615f3.setIcon(icon_f4467e804286abc3b5e190986a093ee7);
+        
+    
+        var popup_0fbe5bf54cd8fb7e80c3c5db4f2275ff = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_396c3bbd04e3e72fdb3527902955a172 = $(`<div id="html_396c3bbd04e3e72fdb3527902955a172" style="width: 100.0%; height: 100.0%;">Agente: Celesc Distribuição S.A.<br>Score Médio: 0.0057<br>Custo Total: 85425769.55<br>Energia Economizada: 140489.12<br>Redução Demanda Ponta: 41946.66</div>`)[0];
+                popup_0fbe5bf54cd8fb7e80c3c5db4f2275ff.setContent(html_396c3bbd04e3e72fdb3527902955a172);
+            
+        
+
+        marker_136c37315c7469c093b679c81b1615f3.bindPopup(popup_0fbe5bf54cd8fb7e80c3c5db4f2275ff)
+        ;
+
+        
+    
+    
+            var marker_af96251e5a8b1e9d2d4047ff08987d88 = L.marker(
+                [-27.09851365, -52.64486742525156],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_3358b8abe7862b7c7028c2ec592a9687 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_af96251e5a8b1e9d2d4047ff08987d88.setIcon(icon_3358b8abe7862b7c7028c2ec592a9687);
+        
+    
+        var popup_f4888511e6283b4a3f2ab9c7bfe55cd1 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_eb9d6d1f6e2474ee56480d13416ed929 = $(`<div id="html_eb9d6d1f6e2474ee56480d13416ed929" style="width: 100.0%; height: 100.0%;">Agente: Celesc Distribuição S/A<br>Score Médio: 0.0744<br>Custo Total: 0.00<br>Energia Economizada: 17032.79<br>Redução Demanda Ponta: 3894.06</div>`)[0];
+                popup_f4888511e6283b4a3f2ab9c7bfe55cd1.setContent(html_eb9d6d1f6e2474ee56480d13416ed929);
+            
+        
+
+        marker_af96251e5a8b1e9d2d4047ff08987d88.bindPopup(popup_f4888511e6283b4a3f2ab9c7bfe55cd1)
+        ;
+
+        
+    
+    
+            var marker_248b177bf3682daa7342c43016726e59 = L.marker(
+                [-1.3363303, -48.44656919031406],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_a4e8ae9eea156bab05af33d320b25565 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_248b177bf3682daa7342c43016726e59.setIcon(icon_a4e8ae9eea156bab05af33d320b25565);
+        
+    
+        var popup_cb65f3cafb682c50a3c66c9c464003f0 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_843a4e3a7641761355ceaad8c887c425 = $(`<div id="html_843a4e3a7641761355ceaad8c887c425" style="width: 100.0%; height: 100.0%;">Agente: Centrais Elétricas do Pará  CELPA<br>Score Médio: 0.0024<br>Custo Total: 0.00<br>Energia Economizada: 226.12<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_cb65f3cafb682c50a3c66c9c464003f0.setContent(html_843a4e3a7641761355ceaad8c887c425);
+            
+        
+
+        marker_248b177bf3682daa7342c43016726e59.bindPopup(popup_cb65f3cafb682c50a3c66c9c464003f0)
+        ;
+
+        
+    
+    
+            var marker_8318152941ef51c69c0fb4d1f067f0e1 = L.marker(
+                [-8.05378155, -34.89064484744516],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_58154b8b146397fd88a01158b43beb49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_8318152941ef51c69c0fb4d1f067f0e1.setIcon(icon_58154b8b146397fd88a01158b43beb49);
+        
+    
+        var popup_e4992477cd0510329fd0734b9e504a15 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_2c9f89b6b83300fdc9d8ebd84c9585ea = $(`<div id="html_2c9f89b6b83300fdc9d8ebd84c9585ea" style="width: 100.0%; height: 100.0%;">Agente: Companhia Energetica de Pernambuco<br>Score Médio: 0.0196<br>Custo Total: 0.00<br>Energia Economizada: 1555.09<br>Redução Demanda Ponta: 283.37</div>`)[0];
+                popup_e4992477cd0510329fd0734b9e504a15.setContent(html_2c9f89b6b83300fdc9d8ebd84c9585ea);
+            
+        
+
+        marker_8318152941ef51c69c0fb4d1f067f0e1.bindPopup(popup_e4992477cd0510329fd0734b9e504a15)
+        ;
+
+        
+    
+    
+            var marker_b2187989202ce384a30f7f76b4fe4853 = L.marker(
+                [0.9464193000000001, -59.90909480248921],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_bc705be5a80846b22f1fb235bf5641be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b2187989202ce384a30f7f76b4fe4853.setIcon(icon_bc705be5a80846b22f1fb235bf5641be);
+        
+    
+        var popup_72b7d50fec18f1c60803ae954035875d = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_71fe432510231e53f86231a9314a47e5 = $(`<div id="html_71fe432510231e53f86231a9314a47e5" style="width: 100.0%; height: 100.0%;">Agente: Companhia Energética de Brasília<br>Score Médio: 0.0000<br>Custo Total: 408267.61<br>Energia Economizada: 118.87<br>Redução Demanda Ponta: 8.14</div>`)[0];
+                popup_72b7d50fec18f1c60803ae954035875d.setContent(html_71fe432510231e53f86231a9314a47e5);
+            
+        
+
+        marker_b2187989202ce384a30f7f76b4fe4853.bindPopup(popup_72b7d50fec18f1c60803ae954035875d)
+        ;
+
+        
+    
+    
+            var marker_ce0a9bb57e75e15d022d977d5ac0bdf7 = L.marker(
+                [-8.05378155, -34.89064484744516],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_8ac41a886eeeb05b7f3b247df85bd2c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ce0a9bb57e75e15d022d977d5ac0bdf7.setIcon(icon_8ac41a886eeeb05b7f3b247df85bd2c7);
+        
+    
+        var popup_41b09d8d268d79ed001e1550c851ec02 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_4c9b5cc1dc017471711d011a6793a55f = $(`<div id="html_4c9b5cc1dc017471711d011a6793a55f" style="width: 100.0%; height: 100.0%;">Agente: Companhia Energética de Pernambuco<br>Score Médio: 0.0000<br>Custo Total: 164760532.90<br>Energia Economizada: 225733.95<br>Redução Demanda Ponta: 35222.47</div>`)[0];
+                popup_41b09d8d268d79ed001e1550c851ec02.setContent(html_4c9b5cc1dc017471711d011a6793a55f);
+            
+        
+
+        marker_ce0a9bb57e75e15d022d977d5ac0bdf7.bindPopup(popup_41b09d8d268d79ed001e1550c851ec02)
+        ;
+
+        
+    
+    
+            var marker_7714ad792578841cf3779138923d31e0 = L.marker(
+                [0.9464193000000001, -59.90909480248921],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_7ea32147df6249cc195a71be3eaf8939 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7714ad792578841cf3779138923d31e0.setIcon(icon_7ea32147df6249cc195a71be3eaf8939);
+        
+    
+        var popup_0a723b58d3459b9353c9d63ebbe5d39d = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_25f5e301b0b6e2a39906516e56deb21c = $(`<div id="html_25f5e301b0b6e2a39906516e56deb21c" style="width: 100.0%; height: 100.0%;">Agente: Companhia Energética de Roraima<br>Score Médio: 0.0000<br>Custo Total: 23396.00<br>Energia Economizada: 128.66<br>Redução Demanda Ponta: 43.71</div>`)[0];
+                popup_0a723b58d3459b9353c9d63ebbe5d39d.setContent(html_25f5e301b0b6e2a39906516e56deb21c);
+            
+        
+
+        marker_7714ad792578841cf3779138923d31e0.bindPopup(popup_0a723b58d3459b9353c9d63ebbe5d39d)
+        ;
+
+        
+    
+    
+            var marker_9a5018b47ea8c5672f9aa00a904a3f5d = L.marker(
+                [-5.63498165, -35.4179213689158],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_d24542b90f20a382f1102efdadca2ecc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9a5018b47ea8c5672f9aa00a904a3f5d.setIcon(icon_d24542b90f20a382f1102efdadca2ecc);
+        
+    
+        var popup_cd90a65acb7e0ac053df4151b12c3bdf = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_30f6907f2958a9d27121fb5fd0c12f31 = $(`<div id="html_30f6907f2958a9d27121fb5fd0c12f31" style="width: 100.0%; height: 100.0%;">Agente: Companhia Energética do Rio Grande do Norte<br>Score Médio: 0.0000<br>Custo Total: 0.00<br>Energia Economizada: 0.00<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_cd90a65acb7e0ac053df4151b12c3bdf.setContent(html_30f6907f2958a9d27121fb5fd0c12f31);
+            
+        
+
+        marker_9a5018b47ea8c5672f9aa00a904a3f5d.bindPopup(popup_cd90a65acb7e0ac053df4151b12c3bdf)
+        ;
+
+        
+    
+    
+            var marker_83d3691f18980e5258b60d6f192c1621 = L.marker(
+                [-31.76770665, -52.34892593195994],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_b20f7ae090a9217aa7671eddb59f841c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_83d3691f18980e5258b60d6f192c1621.setIcon(icon_b20f7ae090a9217aa7671eddb59f841c);
+        
+    
+        var popup_196adff4d92b82eba4dededae5c66df6 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_38e0a643e5217d04c042428d21ae05a0 = $(`<div id="html_38e0a643e5217d04c042428d21ae05a0" style="width: 100.0%; height: 100.0%;">Agente: Companhia Estadual de Distribuição de Energia Elétrica<br>Score Médio: 0.0000<br>Custo Total: 38355464.92<br>Energia Economizada: 21164.78<br>Redução Demanda Ponta: 4327.86</div>`)[0];
+                popup_196adff4d92b82eba4dededae5c66df6.setContent(html_38e0a643e5217d04c042428d21ae05a0);
+            
+        
+
+        marker_83d3691f18980e5258b60d6f192c1621.bindPopup(popup_196adff4d92b82eba4dededae5c66df6)
+        ;
+
+        
+    
+    
+            var marker_399b66fc37f035366e3ba0adc0901e55 = L.marker(
+                [-20.5356207, -49.3242102],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_c15bfaa560d68bd1c915e265049d0533 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_399b66fc37f035366e3ba0adc0901e55.setIcon(icon_c15bfaa560d68bd1c915e265049d0533);
+        
+    
+        var popup_05f8ee00d6c66295dc253cefa1139159 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_44e004344f02beda3aa7f5b8494fd65d = $(`<div id="html_44e004344f02beda3aa7f5b8494fd65d" style="width: 100.0%; height: 100.0%;">Agente: Companhia Paulista de Forca e Luz<br>Score Médio: 0.0000<br>Custo Total: 1000410.03<br>Energia Economizada: 235.29<br>Redução Demanda Ponta: 8.53</div>`)[0];
+                popup_05f8ee00d6c66295dc253cefa1139159.setContent(html_44e004344f02beda3aa7f5b8494fd65d);
+            
+        
+
+        marker_399b66fc37f035366e3ba0adc0901e55.bindPopup(popup_05f8ee00d6c66295dc253cefa1139159)
+        ;
+
+        
+    
+    
+            var marker_0a206ddaeb1129584200cca2ee7b7ccd = L.marker(
+                [-20.5356207, -49.3242102],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_6bb9ea33fcdd78bf939e77bb95b3abeb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_0a206ddaeb1129584200cca2ee7b7ccd.setIcon(icon_6bb9ea33fcdd78bf939e77bb95b3abeb);
+        
+    
+        var popup_153e7862f3f3bf5c3b42339fd35d2049 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_57eaa9000216f7cd556a595b2f0b469a = $(`<div id="html_57eaa9000216f7cd556a595b2f0b469a" style="width: 100.0%; height: 100.0%;">Agente: Companhia Paulista de Força e Luz<br>Score Médio: 0.0095<br>Custo Total: 49299558.41<br>Energia Economizada: 42862.61<br>Redução Demanda Ponta: 10285.90</div>`)[0];
+                popup_153e7862f3f3bf5c3b42339fd35d2049.setContent(html_57eaa9000216f7cd556a595b2f0b469a);
+            
+        
+
+        marker_0a206ddaeb1129584200cca2ee7b7ccd.bindPopup(popup_153e7862f3f3bf5c3b42339fd35d2049)
+        ;
+
+        
+    
+    
+            var marker_cf92fa4d97b30f8d3fafecdc7265bace = L.marker(
+                [-14.207599649999999, -41.669760408092785],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_b79212fc0272d04097782431bf9a5989 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cf92fa4d97b30f8d3fafecdc7265bace.setIcon(icon_b79212fc0272d04097782431bf9a5989);
+        
+    
+        var popup_09aae60425c2162889da878720326b7e = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_9bc6abed192dfcf21e5b10de35370009 = $(`<div id="html_9bc6abed192dfcf21e5b10de35370009" style="width: 100.0%; height: 100.0%;">Agente: Companhia de Eletricidade do Estado da Bahia<br>Score Médio: 0.0007<br>Custo Total: 305099072.28<br>Energia Economizada: 309202.11<br>Redução Demanda Ponta: 67318.56</div>`)[0];
+                popup_09aae60425c2162889da878720326b7e.setContent(html_9bc6abed192dfcf21e5b10de35370009);
+            
+        
+
+        marker_cf92fa4d97b30f8d3fafecdc7265bace.bindPopup(popup_09aae60425c2162889da878720326b7e)
+        ;
+
+        
+    
+    
+            var marker_00fba0477c487d6bc3926f20ac78cf82 = L.marker(
+                [-25.38696195, -51.474271],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_ee6368860b4b349d345e8c3e2e639b86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00fba0477c487d6bc3926f20ac78cf82.setIcon(icon_ee6368860b4b349d345e8c3e2e639b86);
+        
+    
+        var popup_06fd9787492de63ff84c1fd7a69f074c = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_162f03b29213429b2cee7c74bb964ebb = $(`<div id="html_162f03b29213429b2cee7c74bb964ebb" style="width: 100.0%; height: 100.0%;">Agente: Copel Distribuição S.A<br>Score Médio: 0.0024<br>Custo Total: 296327996.93<br>Energia Economizada: 325930.71<br>Redução Demanda Ponta: 22485.45</div>`)[0];
+                popup_06fd9787492de63ff84c1fd7a69f074c.setContent(html_162f03b29213429b2cee7c74bb964ebb);
+            
+        
+
+        marker_00fba0477c487d6bc3926f20ac78cf82.bindPopup(popup_06fd9787492de63ff84c1fd7a69f074c)
+        ;
+
+        
+    
+    
+            var marker_e56089b83853ea785ab133666ca8551b = L.marker(
+                [-28.378140600000002, -53.90102600107244],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_fea125ae905adf2fb9ddce2479ac43d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e56089b83853ea785ab133666ca8551b.setIcon(icon_fea125ae905adf2fb9ddce2479ac43d1);
+        
+    
+        var popup_a3e76902a3b0c7c462663dffaefafb60 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_9e790785b4e7af0cbd2be2581ad45954 = $(`<div id="html_9e790785b4e7af0cbd2be2581ad45954" style="width: 100.0%; height: 100.0%;">Agente: DEPARTAMENTO MUNICIPAL DE ENERGIA DE IJUÍ<br>Score Médio: 0.0000<br>Custo Total: 104400.00<br>Energia Economizada: 18.40<br>Redução Demanda Ponta: 47.52</div>`)[0];
+                popup_a3e76902a3b0c7c462663dffaefafb60.setContent(html_9e790785b4e7af0cbd2be2581ad45954);
+            
+        
+
+        marker_e56089b83853ea785ab133666ca8551b.bindPopup(popup_a3e76902a3b0c7c462663dffaefafb60)
+        ;
+
+        
+    
+    
+            var marker_3b06f51ca46a3522376ea82f0260a963 = L.marker(
+                [-28.378140600000002, -53.90102600107244],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_b917f44439391ee33cbeca7dfed8827d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3b06f51ca46a3522376ea82f0260a963.setIcon(icon_b917f44439391ee33cbeca7dfed8827d);
+        
+    
+        var popup_f1a59d22f1ceae06c97f55c18eadd599 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_7febaea46d08f45b7026e68a515f34f4 = $(`<div id="html_7febaea46d08f45b7026e68a515f34f4" style="width: 100.0%; height: 100.0%;">Agente: Departamento Municipal de Energia de Ijui<br>Score Médio: 0.0000<br>Custo Total: 914564.87<br>Energia Economizada: 626.50<br>Redução Demanda Ponta: 247.42</div>`)[0];
+                popup_f1a59d22f1ceae06c97f55c18eadd599.setContent(html_7febaea46d08f45b7026e68a515f34f4);
+            
+        
+
+        marker_3b06f51ca46a3522376ea82f0260a963.bindPopup(popup_f1a59d22f1ceae06c97f55c18eadd599)
+        ;
+
+        
+    
+    
+            var marker_a761f5ee8230dbad3ebb153c3d6d8edd = L.marker(
+                [-18.0946619, -40.5178891],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_79ae6aaa8daf863fd2ae02a213fea59d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a761f5ee8230dbad3ebb153c3d6d8edd.setIcon(icon_79ae6aaa8daf863fd2ae02a213fea59d);
+        
+    
+        var popup_f98064b71936af45f5c21badbdc0b37b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_27aacd071bf16c35d58dde2fc0c44f88 = $(`<div id="html_27aacd071bf16c35d58dde2fc0c44f88" style="width: 100.0%; height: 100.0%;">Agente: EDP ESPÍRITO SANTO DISTRIBUIÇÃO DE ENERGIA S.A.<br>Score Médio: 0.0000<br>Custo Total: 700000.00<br>Energia Economizada: 0.00<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_f98064b71936af45f5c21badbdc0b37b.setContent(html_27aacd071bf16c35d58dde2fc0c44f88);
+            
+        
+
+        marker_a761f5ee8230dbad3ebb153c3d6d8edd.bindPopup(popup_f98064b71936af45f5c21badbdc0b37b)
+        ;
+
+        
+    
+    
+            var marker_9ae0c316790f2222655df246c4b9ef95 = L.marker(
+                [-18.0946619, -40.5178891],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_e32a8ddf490a5a966469adfb3822923b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9ae0c316790f2222655df246c4b9ef95.setIcon(icon_e32a8ddf490a5a966469adfb3822923b);
+        
+    
+        var popup_5199be0c50d489b37d29902e40c34ce1 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_cb936e04e70b09f087a12d911b08ed69 = $(`<div id="html_cb936e04e70b09f087a12d911b08ed69" style="width: 100.0%; height: 100.0%;">Agente: EDP Espirito Santo Distribuiçaõ de Energia S/A<br>Score Médio: 0.0000<br>Custo Total: 0.00<br>Energia Economizada: 0.00<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_5199be0c50d489b37d29902e40c34ce1.setContent(html_cb936e04e70b09f087a12d911b08ed69);
+            
+        
+
+        marker_9ae0c316790f2222655df246c4b9ef95.bindPopup(popup_5199be0c50d489b37d29902e40c34ce1)
+        ;
+
+        
+    
+    
+            var marker_3d5d7ec2bef79c25b6a9cfd661f69b33 = L.marker(
+                [-22.52740505, -52.15899825],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_82716a9ae532f573018409576bba3ed0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3d5d7ec2bef79c25b6a9cfd661f69b33.setIcon(icon_82716a9ae532f573018409576bba3ed0);
+        
+    
+        var popup_d9ab3ae555a06f73e610f16aa327a68c = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_85e505fbc3b5e0a50f4141bfb839e8b5 = $(`<div id="html_85e505fbc3b5e0a50f4141bfb839e8b5" style="width: 100.0%; height: 100.0%;">Agente: ELEKTRO - Eletricidade e Serviços S/A<br>Score Médio: 0.0000<br>Custo Total: 0.00<br>Energia Economizada: 0.00<br>Redução Demanda Ponta: 0.00</div>`)[0];
+                popup_d9ab3ae555a06f73e610f16aa327a68c.setContent(html_85e505fbc3b5e0a50f4141bfb839e8b5);
+            
+        
+
+        marker_3d5d7ec2bef79c25b6a9cfd661f69b33.bindPopup(popup_d9ab3ae555a06f73e610f16aa327a68c)
+        ;
+
+        
+    
+    
+            var marker_85f9c978cdd5bd4a111c2c9315a9eb04 = L.marker(
+                [14.5442807, -90.44272761967392],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_a3926f47ce37fe8c62c4f4d467815373 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_85f9c978cdd5bd4a111c2c9315a9eb04.setIcon(icon_a3926f47ce37fe8c62c4f4d467815373);
+        
+    
+        var popup_fc00fb1891ff1e86dbe023d12efb00e7 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_2c14db88da387b7e6fc38a93673839c6 = $(`<div id="html_2c14db88da387b7e6fc38a93673839c6" style="width: 100.0%; height: 100.0%;">Agente: ELEKTRO REDES S.A.<br>Score Médio: 0.0002<br>Custo Total: 107799162.99<br>Energia Economizada: 3039881.95<br>Redução Demanda Ponta: 80459.54</div>`)[0];
+                popup_fc00fb1891ff1e86dbe023d12efb00e7.setContent(html_2c14db88da387b7e6fc38a93673839c6);
+            
+        
+
+        marker_85f9c978cdd5bd4a111c2c9315a9eb04.bindPopup(popup_fc00fb1891ff1e86dbe023d12efb00e7)
+        ;
+
+        
+    
+    
+            var marker_080818eebe49de076bbd8d502cdad1d5 = L.marker(
+                [-9.619414599999999, -35.739882092017396],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_f6d9669ece7b817b11678423f0686fe3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_080818eebe49de076bbd8d502cdad1d5.setIcon(icon_f6d9669ece7b817b11678423f0686fe3);
+        
+    
+        var popup_702ed689fb813e6eb4db97e0d01432a4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_60f7949e7cdf13d76e5665fe86727d54 = $(`<div id="html_60f7949e7cdf13d76e5665fe86727d54" style="width: 100.0%; height: 100.0%;">Agente: EQUATORIAL ENERGIA ALAGOAS<br>Score Médio: 0.0000<br>Custo Total: 933121.67<br>Energia Economizada: 790.22<br>Redução Demanda Ponta: 96.34</div>`)[0];
+                popup_702ed689fb813e6eb4db97e0d01432a4.setContent(html_60f7949e7cdf13d76e5665fe86727d54);
+            
+        
+
+        marker_080818eebe49de076bbd8d502cdad1d5.bindPopup(popup_702ed689fb813e6eb4db97e0d01432a4)
+        ;
+
+        
+    
+    
+            var marker_20fe3b6be7410cc779fb2ed6e57b31da = L.marker(
+                [-2.50895825, -44.26279242810877],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_0c1f15abe4b86f7a986dbc3b76b78211 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_20fe3b6be7410cc779fb2ed6e57b31da.setIcon(icon_0c1f15abe4b86f7a986dbc3b76b78211);
+        
+    
+        var popup_ed27848efa8d988c425ab50ce5d1e0ed = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_47dc63040322eadefdc0125e606e358c = $(`<div id="html_47dc63040322eadefdc0125e606e358c" style="width: 100.0%; height: 100.0%;">Agente: EQUATORIAL ENERGIA MARANHÃO<br>Score Médio: 0.0000<br>Custo Total: 1302708.19<br>Energia Economizada: 959.92<br>Redução Demanda Ponta: 226.59</div>`)[0];
+                popup_ed27848efa8d988c425ab50ce5d1e0ed.setContent(html_47dc63040322eadefdc0125e606e358c);
+            
+        
+
+        marker_20fe3b6be7410cc779fb2ed6e57b31da.bindPopup(popup_ed27848efa8d988c425ab50ce5d1e0ed)
+        ;
+
+        
+    
+    
+            var marker_05b14ff3df69d95bd071afe0b3c3b9b2 = L.marker(
+                [-22.52740505, -52.15899825],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_bd7e70f1140f0460e4241848d2cf03a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_05b14ff3df69d95bd071afe0b3c3b9b2.setIcon(icon_bd7e70f1140f0460e4241848d2cf03a1);
+        
+    
+        var popup_653c67b1c0de7345db236becba024b99 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_81d7b263e1956a72f2ebf12a13c216ce = $(`<div id="html_81d7b263e1956a72f2ebf12a13c216ce" style="width: 100.0%; height: 100.0%;">Agente: Elektro - Eletricidade e Serviços S/A<br>Score Médio: 0.0011<br>Custo Total: 0.00<br>Energia Economizada: 306.54<br>Redução Demanda Ponta: 3.45</div>`)[0];
+                popup_653c67b1c0de7345db236becba024b99.setContent(html_81d7b263e1956a72f2ebf12a13c216ce);
+            
+        
+
+        marker_05b14ff3df69d95bd071afe0b3c3b9b2.bindPopup(popup_653c67b1c0de7345db236becba024b99)
+        ;
+
+        
+    
+    
+            var marker_220fe9c83dfb693b216a5d6e61a6a0b7 = L.marker(
+                [14.5442807, -90.44272761967392],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_74222bc5d73abd9d544e799ff372b07a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_220fe9c83dfb693b216a5d6e61a6a0b7.setIcon(icon_74222bc5d73abd9d544e799ff372b07a);
+        
+    
+        var popup_0cfd228125bd96188e10145c9244c627 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_544d91ebf0d01bf5258df370405b2aad = $(`<div id="html_544d91ebf0d01bf5258df370405b2aad" style="width: 100.0%; height: 100.0%;">Agente: Elektro Redes S.A<br>Score Médio: 0.0010<br>Custo Total: 99935884.06<br>Energia Economizada: 40487.14<br>Redução Demanda Ponta: 7901.82</div>`)[0];
+                popup_0cfd228125bd96188e10145c9244c627.setContent(html_544d91ebf0d01bf5258df370405b2aad);
+            
+        
+
+        marker_220fe9c83dfb693b216a5d6e61a6a0b7.bindPopup(popup_0cfd228125bd96188e10145c9244c627)
+        ;
+
+        
+    
+    
+            var marker_4d717ed6a8563b063ca0ccebf3ee9121 = L.marker(
+                [14.5442807, -90.44272761967392],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_7ffcec4aa7c9baae0cab5b98297ff0e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_4d717ed6a8563b063ca0ccebf3ee9121.setIcon(icon_7ffcec4aa7c9baae0cab5b98297ff0e7);
+        
+    
+        var popup_70ad789c6bd9f0c7be83780975201c10 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_fdfb7b2a8a3a454deeed97c03f7880f8 = $(`<div id="html_fdfb7b2a8a3a454deeed97c03f7880f8" style="width: 100.0%; height: 100.0%;">Agente: Elektro Redes S.A.<br>Score Médio: 0.0192<br>Custo Total: 24033635.93<br>Energia Economizada: 27315.08<br>Redução Demanda Ponta: 4902.65</div>`)[0];
+                popup_70ad789c6bd9f0c7be83780975201c10.setContent(html_fdfb7b2a8a3a454deeed97c03f7880f8);
+            
+        
+
+        marker_4d717ed6a8563b063ca0ccebf3ee9121.bindPopup(popup_70ad789c6bd9f0c7be83780975201c10)
+        ;
+
+        
+    
+    
+            var marker_43385f285acaf39942fd51fc34b1eaa2 = L.marker(
+                [-19.2512465, -40.4593437],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_0a366505b7bbccdd43c807c5779b864e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_43385f285acaf39942fd51fc34b1eaa2.setIcon(icon_0a366505b7bbccdd43c807c5779b864e);
+        
+    
+        var popup_50438a2fe1883f911986894fa732f2f2 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_7d3a1787b6e815a77fd2037d12569c9e = $(`<div id="html_7d3a1787b6e815a77fd2037d12569c9e" style="width: 100.0%; height: 100.0%;">Agente: Empresa Luz e Forca Santa Maria S.A.<br>Score Médio: 0.0000<br>Custo Total: 3996879.27<br>Energia Economizada: 1288.09<br>Redução Demanda Ponta: 300.65</div>`)[0];
+                popup_50438a2fe1883f911986894fa732f2f2.setContent(html_7d3a1787b6e815a77fd2037d12569c9e);
+            
+        
+
+        marker_43385f285acaf39942fd51fc34b1eaa2.bindPopup(popup_50438a2fe1883f911986894fa732f2f2)
+        ;
+
+        
+    
+    
+            var marker_7aaa52c30028b8324dbf2548f3233ab9 = L.marker(
+                [-19.2512465, -40.4593437],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_446244a3559a56c6e4410ace8f7cb096 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7aaa52c30028b8324dbf2548f3233ab9.setIcon(icon_446244a3559a56c6e4410ace8f7cb096);
+        
+    
+        var popup_3945d2d05bcf7ed3727013a770d26c2a = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_2a6addaf01cac11aa9540dad42bc7362 = $(`<div id="html_2a6addaf01cac11aa9540dad42bc7362" style="width: 100.0%; height: 100.0%;">Agente: Empresa Luz e Força Santa Maria S.A.<br>Score Médio: 0.0000<br>Custo Total: 2800518.75<br>Energia Economizada: 11582.61<br>Redução Demanda Ponta: 4314.71</div>`)[0];
+                popup_3945d2d05bcf7ed3727013a770d26c2a.setContent(html_2a6addaf01cac11aa9540dad42bc7362);
+            
+        
+
+        marker_7aaa52c30028b8324dbf2548f3233ab9.bindPopup(popup_3945d2d05bcf7ed3727013a770d26c2a)
+        ;
+
+        
+    
+    
+            var marker_23d95a6bd68bf25abd2a75ac5c0a75fb = L.marker(
+                [-5.8865073, -38.62118095],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_5c570202235aaec748d06cb84bc43de2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_23d95a6bd68bf25abd2a75ac5c0a75fb.setIcon(icon_5c570202235aaec748d06cb84bc43de2);
+        
+    
+        var popup_db693caa51a334af1b4a5defe70dd9a4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_df3a5e9597f99f579196f93df9748f8c = $(`<div id="html_df3a5e9597f99f579196f93df9748f8c" style="width: 100.0%; height: 100.0%;">Agente: Enel Distribuicao Ceara<br>Score Médio: 0.0000<br>Custo Total: 54387903.74<br>Energia Economizada: 46026.17<br>Redução Demanda Ponta: 3612.80</div>`)[0];
+                popup_db693caa51a334af1b4a5defe70dd9a4.setContent(html_df3a5e9597f99f579196f93df9748f8c);
+            
+        
+
+        marker_23d95a6bd68bf25abd2a75ac5c0a75fb.bindPopup(popup_db693caa51a334af1b4a5defe70dd9a4)
+        ;
+
+        
+    
+    
+            var marker_0244658b645bd482340139f2a772b5cb = L.marker(
+                [-21.5363195, -43.0108583],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_8aa2b553be826e7f550646e709220c3a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0244658b645bd482340139f2a772b5cb.setIcon(icon_8aa2b553be826e7f550646e709220c3a);
+        
+    
+        var popup_1af7f7c71c5702645c466980cb134f20 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_dc81fb3d8dd2260c55415f99bd78b591 = $(`<div id="html_dc81fb3d8dd2260c55415f99bd78b591" style="width: 100.0%; height: 100.0%;">Agente: Energisa Minas Gerais<br>Score Médio: 0.0000<br>Custo Total: 169461.69<br>Energia Economizada: 656.34<br>Redução Demanda Ponta: 38.08</div>`)[0];
+                popup_1af7f7c71c5702645c466980cb134f20.setContent(html_dc81fb3d8dd2260c55415f99bd78b591);
+            
+        
+
+        marker_0244658b645bd482340139f2a772b5cb.bindPopup(popup_1af7f7c71c5702645c466980cb134f20)
+        ;
+
+        
+    
+    
+            var marker_a75c6a9661e156755b4709cb739bce4f = L.marker(
+                [-9.619414599999999, -35.739882092017396],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_e9be990ba263b6c137ab9ff6112f32ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a75c6a9661e156755b4709cb739bce4f.setIcon(icon_e9be990ba263b6c137ab9ff6112f32ed);
+        
+    
+        var popup_891c0dd8d11c714efb3a12fd81cd60b4 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_5c88485233922c5cad38132c586f0a39 = $(`<div id="html_5c88485233922c5cad38132c586f0a39" style="width: 100.0%; height: 100.0%;">Agente: Equatorial Alagoas<br>Score Médio: 0.0000<br>Custo Total: 15720611.95<br>Energia Economizada: 21279.42<br>Redução Demanda Ponta: 810.13</div>`)[0];
+                popup_891c0dd8d11c714efb3a12fd81cd60b4.setContent(html_5c88485233922c5cad38132c586f0a39);
+            
+        
+
+        marker_a75c6a9661e156755b4709cb739bce4f.bindPopup(popup_891c0dd8d11c714efb3a12fd81cd60b4)
+        ;
+
+        
+    
+    
+            var marker_d75ce31dd3e22982fc3aa6a17a91fa77 = L.marker(
+                [-2.7085464000000004, -44.312203240935304],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_53952c0d877545db8c4fc11ebbfff88f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d75ce31dd3e22982fc3aa6a17a91fa77.setIcon(icon_53952c0d877545db8c4fc11ebbfff88f);
+        
+    
+        var popup_86cb13fc58727d37668e557fc1e36a82 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_c65b354a20b80c4dba8eb90cf742ba44 = $(`<div id="html_c65b354a20b80c4dba8eb90cf742ba44" style="width: 100.0%; height: 100.0%;">Agente: Equatorial Maranhao<br>Score Médio: 0.0000<br>Custo Total: 2711380.43<br>Energia Economizada: 913.76<br>Redução Demanda Ponta: 56.08</div>`)[0];
+                popup_86cb13fc58727d37668e557fc1e36a82.setContent(html_c65b354a20b80c4dba8eb90cf742ba44);
+            
+        
+
+        marker_d75ce31dd3e22982fc3aa6a17a91fa77.bindPopup(popup_86cb13fc58727d37668e557fc1e36a82)
+        ;
+
+        
+    
+    
+            var marker_35b0b8819d0d2edb72838ba8ffb30e3e = L.marker(
+                [-2.7085464000000004, -44.312203240935304],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_d985a5b8d54ac5876c78212025c32b3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_35b0b8819d0d2edb72838ba8ffb30e3e.setIcon(icon_d985a5b8d54ac5876c78212025c32b3f);
+        
+    
+        var popup_0b5694a05c3115cb0aa1f5e88bf42efb = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_5c3c1bb039090103e6459d6a29b3666f = $(`<div id="html_5c3c1bb039090103e6459d6a29b3666f" style="width: 100.0%; height: 100.0%;">Agente: Equatorial Maranhão<br>Score Médio: 0.0000<br>Custo Total: 1380844.50<br>Energia Economizada: 442.23<br>Redução Demanda Ponta: 51.01</div>`)[0];
+                popup_0b5694a05c3115cb0aa1f5e88bf42efb.setContent(html_5c3c1bb039090103e6459d6a29b3666f);
+            
+        
+
+        marker_35b0b8819d0d2edb72838ba8ffb30e3e.bindPopup(popup_0b5694a05c3115cb0aa1f5e88bf42efb)
+        ;
+
+        
+    
+    
+            var marker_ba0bad1a30472d3fec4f1d967a2a1889 = L.marker(
+                [-1.2933393, -47.93831326194321],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_264e605f75bcf28f675527454d96fc2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba0bad1a30472d3fec4f1d967a2a1889.setIcon(icon_264e605f75bcf28f675527454d96fc2b);
+        
+    
+        var popup_b6d7839495936ab3066c162b0007c05c = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_4bd44befd6ed3bd68dddbaec53390c7e = $(`<div id="html_4bd44befd6ed3bd68dddbaec53390c7e" style="width: 100.0%; height: 100.0%;">Agente: Equatorial Para<br>Score Médio: 0.0000<br>Custo Total: 624595.20<br>Energia Economizada: 96.24<br>Redução Demanda Ponta: 21.64</div>`)[0];
+                popup_b6d7839495936ab3066c162b0007c05c.setContent(html_4bd44befd6ed3bd68dddbaec53390c7e);
+            
+        
+
+        marker_ba0bad1a30472d3fec4f1d967a2a1889.bindPopup(popup_b6d7839495936ab3066c162b0007c05c)
+        ;
+
+        
+    
+    
+            var marker_44499b0abdbabe260d913dfd70209245 = L.marker(
+                [-7.0822728, -41.465627],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_c68b0b66575b90ebacc04932792b4d3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_44499b0abdbabe260d913dfd70209245.setIcon(icon_c68b0b66575b90ebacc04932792b4d3e);
+        
+    
+        var popup_38b95b823b366accf0ec83f80562b0a8 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_4fba8739b399cba40ed25dd0bcb518f9 = $(`<div id="html_4fba8739b399cba40ed25dd0bcb518f9" style="width: 100.0%; height: 100.0%;">Agente: Equatorial Piaui<br>Score Médio: 0.0000<br>Custo Total: 8072560.80<br>Energia Economizada: 1890.14<br>Redução Demanda Ponta: 90.84</div>`)[0];
+                popup_38b95b823b366accf0ec83f80562b0a8.setContent(html_4fba8739b399cba40ed25dd0bcb518f9);
+            
+        
+
+        marker_44499b0abdbabe260d913dfd70209245.bindPopup(popup_38b95b823b366accf0ec83f80562b0a8)
+        ;
+
+        
+    
+    
+            var marker_b3fe6adbeda5a60d1d837b5e2264d17d = L.marker(
+                [-18.0946619, -40.5178891],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_eabc973e954e5404f7d775ed5419f5b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b3fe6adbeda5a60d1d837b5e2264d17d.setIcon(icon_eabc973e954e5404f7d775ed5419f5b7);
+        
+    
+        var popup_d156231c84be66cebc526b32e532eb85 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_a86f9c0d8eebba203dce57edc848a653 = $(`<div id="html_a86f9c0d8eebba203dce57edc848a653" style="width: 100.0%; height: 100.0%;">Agente: Espírito Santo Distribuição de Energia S/A.<br>Score Médio: 0.0000<br>Custo Total: 37576358.27<br>Energia Economizada: 104317.79<br>Redução Demanda Ponta: 30075.74</div>`)[0];
+                popup_d156231c84be66cebc526b32e532eb85.setContent(html_a86f9c0d8eebba203dce57edc848a653);
+            
+        
+
+        marker_b3fe6adbeda5a60d1d837b5e2264d17d.bindPopup(popup_d156231c84be66cebc526b32e532eb85)
+        ;
+
+        
+    
+    
+            var marker_3261ada6584c69c4a0f77d87a14245a4 = L.marker(
+                [-28.676464199999998, -50.43414469790018],
+                {}
+            ).addTo(map_5248f4effeba76088e35be17d7e5e99e);
+        
+    
+            var icon_ea15cc4cf0b9e2f372497cdc0e1336c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_3261ada6584c69c4a0f77d87a14245a4.setIcon(icon_ea15cc4cf0b9e2f372497cdc0e1336c8);
+        
+    
+        var popup_13265931084d63aaf6efd318eb46a504 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_470a60c992814fa20c306450adf5b2a1 = $(`<div id="html_470a60c992814fa20c306450adf5b2a1" style="width: 100.0%; height: 100.0%;">Agente: Rio Grande Energia S/A<br>Score Médio: 0.0296<br>Custo Total: 0.00<br>Energia Economizada: 4521.89<br>Redução Demanda Ponta: 1037.14</div>`)[0];
+                popup_13265931084d63aaf6efd318eb46a504.setContent(html_470a60c992814fa20c306450adf5b2a1);
+            
+        
+
+        marker_3261ada6584c69c4a0f77d87a14245a4.bindPopup(popup_13265931084d63aaf6efd318eb46a504)
+        ;
+
+        
+    
+</script>
+</html>
