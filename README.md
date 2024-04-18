@@ -1,5 +1,3 @@
-# Final attempt to create the README.md file
-readme_content = """
 ### README for Energia Lab
 
 **Project Overview:**
